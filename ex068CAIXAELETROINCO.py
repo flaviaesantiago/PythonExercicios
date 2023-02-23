@@ -1,0 +1,16 @@
+cinq = vint = dez = um = 0
+print('{:^30}'.format('= = = = C A I X A  E L E T R O N I C O = = = = '))
+print('Temos apenas cedulas de 50,20,10 e 1 real.')
+valor = int(input('Qual valor deseja sacar?: '))
+cinq = (valor // 50)
+sobra = valor - (50 * cinq)
+print(f'{cinq} notas de 50.')
+vint = (sobra // 20)
+sobra = sobra - (20 * vint)
+print(f'{vint} notas de 20.')
+dez = (vint // 10)
+sobra = sobra - (10 * dez)
+print(f'{dez} notas de 10.')
+um = (sobra // 1)
+print(f'{um} notas de 1.')
+

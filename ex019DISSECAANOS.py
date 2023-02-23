@@ -1,0 +1,5 @@
+anos = str(input('Digite um ano: '))
+print('Unidade: {}'.format(anos[3]))
+print('Dezena: {}'.format(anos[2]))
+print('Centena: {}'.format(anos[1]))
+print('Milhar: {}'.format(anos[0]))
