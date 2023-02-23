@@ -1,33 +1,34 @@
 import time
 dados = []
-alunos = []
-notas = []
+a = []
+n = []
 while True:
-    alunos.append(str(input(f'Aluno: ')))
-    notas.append(float(input(f'Primeira nota: ')))
-    notas.append(float(input(f'Segunda nota: ')))
-    me = (notas[0] + notas[1]) / 2
-    notas.append(me)
-    alunos.append(notas[:])
-    dados.append(alunos[:])
-    alunos.clear()
-    notas.clear()
-    n = str(input(f'Deseja continuar?')).strip().upper()[0]
-    if 'N' in n:
+    a.append(str(input('Aluno: ')))
+    n.append(float(input('Nota 1: ')))
+    n.append(float(input('Nota 2: ')))
+    me = (n[0] + n[1]) / 2
+    n.append(me)
+    a.append(n[:])
+    dados.append(a[:])
+    a.clear()
+    n.clear()
+    r = str(input('Deseja continuar?').strip().upper())
+    if 'N' in r:
         break
-print('No.  NOME      MEDIA')
+print(f'Nº.   NOME    MEDIA')
 print('===' * 10)
 for c in range(len(dados)):
-    print(f'{c:<4} {dados[c][0].capitalize():<10} {dados[c][1][2]:<8} \n')
-g = 0
+    print(f'{c+1:<4} {dados[c][0].capitalize():<10} {dados[c][1][2]:<8}\n')
 while True:
-    print('==' * 20)
+    print('===' * 10)
     time.sleep(1)
-    g = int(input('Ver boletim qual aluno? (999 para sair) '))
-    if g < len(dados):
-        print(f'{dados[g][0].capitalize():<10}\n PRIMEIRA PROVA: {dados[g][1][0]}\n SEGUNDA PROVA: {dados[g][1][1]}')
-    if g == 999:
+    q = int(input('Ver boletim de qual aluno? (999 para sair)'))
+    if q == 999:
         print('FINALIZANDO...')
         time.sleep(1)
         print('>>> VOLTE SEMPRE <<<')
         break
+    if q <= len(dados):
+            print(f'{dados[q-1][0].capitalize()} \nProva 1: {dados[q-1][1][0]} \nProva 2: {dados[q-1][1][1]}')
+    else:
+        print('Numero invalido. Tente novamente.')
