@@ -1,24 +1,18 @@
 import time
 dados = []
-a = []
-n = []
 while True:
-    a.append(str(input('Aluno: ')))
-    n.append(float(input('Nota 1: ')))
-    n.append(float(input('Nota 2: ')))
-    me = (n[0] + n[1]) / 2
-    n.append(me)
-    a.append(n[:])
-    dados.append(a[:])
-    a.clear()
-    n.clear()
-    r = str(input('Deseja continuar?').strip().upper())
+    a = (str(input('Aluno: ')))
+    n1 = (float(input('Nota 1: ')))
+    n2 = (float(input('Nota 2: ')))
+    me = (n1 + n2) / 2
+    dados.append([a, [n1, n2], me])
+    r = str(input('Deseja continuar?')).strip().upper()[0]
     if 'N' in r:
         break
 print(f'Nº.   NOME    MEDIA')
 print('===' * 10)
-for c in range(len(dados)):
-    print(f'{c+1:<4} {dados[c][0].capitalize():<10} {dados[c][1][2]:<8}\n')
+for c, a in enumerate(dados):
+    print(f'{c+1:<4} {a[0].capitalize():<10} {a[2]:<8}\n')
 while True:
     print('===' * 10)
     time.sleep(1)

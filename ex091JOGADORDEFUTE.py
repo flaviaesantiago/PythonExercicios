@@ -10,7 +10,7 @@ print('=-' * 20)
 for k, v in dados.items():
     print(f'o campo {k} tem valor {v}')
 print('=-' * 20)
-print(f'{dados["nome"].capitalize()} jogou {len(dados["gols"])} partidas.')
+print(f'{dados["nome"].capitalize()} jogou {t} partidas.')
 for p in range(0, len(dados["gols"])):
     print(f'No {p + 1}º jogo, marcou {part[p]} gols')
 # OU for i, v in enumerate(dados["gols"]
